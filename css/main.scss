@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap');
+
+.sedgwick-ave-regular {
+    font-family: "Sedgwick Ave", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+// <uniquifier>: Use a uniquifier for the class name
+// <weight>: Use a value from 300 to 700
+
+.signika-negative-p {
+    font-family: "Signika Negative", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+html{font-size: 62.5%;}
+html,body{padding: 0; margin: 0;}
+body{
+    overflow: hidden;
+}
+
+header{
+    nav{
+        a{
+            font-size: 1.8rem !important;
+        }
+    }
+}
+
+// loader
+.loadAjax{
+    background-color: #fff;
+    width: 150%;
+    height: 100svh;
+    position: fixed;
+    z-index: 5;
+    left: -200%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 100px 200px #fff;
+    
+    &.loading{
+        transition: all 2s ease;
+        left: 0;
+    }
+    &.loaded{
+        transition: all 2s ease;
+        left: 200%;
+    }
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 150px;
+    aspect-ratio: 1;
+    background: #f34b09;
+    clip-path: polygon(100.00% 50.00%,64.14% 64.14%,50.00% 100.00%,35.86% 64.14%,0.00% 50.00%,35.86% 35.86%,50.00% 0.00%,64.14% 35.86%);
+    -webkit-mask:radial-gradient(circle 5px,#0000 90%,#000);
+    animation: l1 1.5s infinite linear;
+  }
+  @keyframes l1{ 
+    100%{transform: rotate(1turn)}
+  }
+}
+
+.webdoor{
+    width: 100%;
+    height: 100svh; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center right;
+    //transform: scale(1.1);
+    transition: all 2s ease;
+    
+    &.page--home{
+        background-image: url(../images/jiraiya-4k-pintorly-zaqtbzjj0n3aloc9.jpg);
+    }
+    &.page--sobre{
+        background-image: url(../images/utaha-kasumigaoka-4k-pfp-lv8lpbodfo92mh1y.jpg);
+    }
+
+    h1,p{
+        color: white;
+        text-shadow: 5px 5px 3px rgba(#000000, .8);
+        padding: 0;
+        opacity: 0;
+
+    }
+    
+    h1{
+        transition: all 1.5s ease;
+        @extend .sedgwick-ave-regular;
+        font-size: 20rem;
+    }
+    
+    .wrap-text{
+        margin-top: 10rem;
+    }
+    p{
+        max-width: 50vw;
+        @extend .signika-negative-p;
+        font-size: 3em;
+        transition: all 2s ease;
+        transition-delay: .5s;
+        
+    }
+
+    &.loaded{
+
+        // transform: scale(1);
+        background-position: center center;
+
+        h1{
+            padding-left: 4vw;
+            opacity: 1;
+        }
+        p{
+            padding-left: 4.5vw;
+            opacity: 1;
+        }
+    }
+}
